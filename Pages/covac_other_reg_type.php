@@ -37,7 +37,7 @@
             <br>
                 <div class="container">
                     <h6>To Register a vaccine please click here</h6>
-                    <button type="button" class="btn btn-danger">Register Vaccine</button>
+                    <button type="button" class="btn btn-danger" id="reg_vaccine">Register Vaccine</button>
                 </div>
             <br>
         </div>
@@ -67,5 +67,8 @@
 
     document.getElementById("go_to_login").onclick = function() {
         location.href = "http://10.211.55.2/COVAC/COVAC_DBMS/Pages/covac_login.php";
+    };
+    document.getElementById("reg_vaccine").onclick = function() {
+        location.href = "http://10.211.55.2/COVAC/COVAC_DBMS/Pages/covac_vaccine_register.php";
     };
 </script>
