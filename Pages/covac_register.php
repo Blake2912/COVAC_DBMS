@@ -62,21 +62,16 @@
         </div>
     </div>
     <br>
-    <div class="container">
-        <div class="card">
-            <div class="container">
-                <br>
-                <h6> Hospital/Medical Worker registration click the button below!</h6>
-                <div class="mb-3">
-                    <button type="submit" class="btn btn-secondary" id="register">Register Hospital/Worker</button>
-                </div>
-            </div>
+    <br>
+    <div class="contaner">
+        <div class="container">
+            <button type="button" class="btn btn-outline-success" id="go_to_login">Go to login</button>
         </div>
     </div>
     <br>
     <div class="contaner">
         <div class="container">
-            <button type="button" class="btn btn-outline-success" id="go_to_login">Go to login</button>
+            <button type="button" class="btn btn-outline-dark" id="go_to_reg">Go to registrations</button>
         </div>
     </div>
     <br>
@@ -87,10 +82,10 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
 
 <script type="text/javascript">
-    document.getElementById("register").onclick = function () {
-        location.href = "http://10.211.55.2/COVAC/COVAC_DBMS/Pages/covac_other_reg_type.php";
-    };
     document.getElementById("go_to_login").onclick = function() {
         location.href = "http://10.211.55.2/COVAC/COVAC_DBMS/Pages/covac_login.php";
+    };
+    document.getElementById("go_to_reg").onclick = function () {
+        location.href = "http://10.211.55.2/COVAC/COVAC_DBMS/Pages/covac_other_reg_type.php";
     };
 </script>

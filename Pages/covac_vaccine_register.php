@@ -52,7 +52,7 @@
     <br>
     <div class="contaner">
         <div class="container">
-            <button type="button" class="btn btn-outline-dark" id="go_to_reg">Go to other registrations</button>
+            <button type="button" class="btn btn-outline-dark" id="go_to_reg">Go to registrations</button>
         </div>
     </div>
 </body>
