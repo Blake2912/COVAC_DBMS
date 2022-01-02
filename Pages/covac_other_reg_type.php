@@ -57,7 +57,7 @@ localhost<!DOCTYPE html>
     <br>
     <div class="contaner">
         <div class="container">
-            <button type="button" class="btn btn-outline-success" id="go_to_login">Go to login</button>
+            <button type="button" class="btn btn-outline-success" id="go_to_welcome">Go to welcome</button>
         </div>
     </div>
     <br>
@@ -69,14 +69,14 @@ localhost<!DOCTYPE html>
 
 <script type="text/javascript">
 
-    document.getElementById("go_to_login").onclick = function() {
-        location.href = "http://localhost/COVAC/COVAC_DBMS/Pages/covac_login.php";
+    document.getElementById("go_to_welcome").onclick = function() {
+        location.href = "http://localhost/COVAC/COVAC_DBMS/Pages/covac_welcome.php";
     };
     document.getElementById("reg_vaccine").onclick = function() {
         location.href = "http://localhost/COVAC/COVAC_DBMS/Pages/covac_vaccine_register.php";
     };
     document.getElementById("user_reg").onclick = function() {
-        location.href = "http://localhost/COVAC/COVAC_DBMS/Pages/covac_register.php";
+        location.href = "http://localhost/COVAC/COVAC_DBMS/Pages/covac_user_register.php";
     };
     document.getElementById("reg_vaccinator").onclick = function() {
         location.href = "http://localhost/COVAC/COVAC_DBMS/Pages/covac_vaccinator_register.php";

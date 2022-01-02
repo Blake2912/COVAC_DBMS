@@ -10,7 +10,7 @@
 <body>
     <br>
     <div class="container">
-        <h2>COVAC Vaccine Registration</h2>
+        <h2>Vaccine Registration</h2>
     </div>
     <hr>
     <br>
@@ -21,7 +21,7 @@
                 <form action="">
                     <div class="mb-3">
                         <label for="vaccineIdInput" class="form-label">Vaccine ID</label>
-                        <input type="text" class="form-control" id="vaccineIdInput" aria-describedby="vaccineId" required>
+                        <input type="number" class="form-control" id="vaccineIdInput" aria-describedby="vaccineId" required>
                     </div>
                     <div class="mb-3">
                         <label for="vaccinenameInput" class="form-label">Vaccine Name</label>

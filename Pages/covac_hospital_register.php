@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <title>Vaccine Registration</title>
+    <title>Hospital Registration</title>
 </head>
 <body>
     <br>
     <div class="container">
-        <h2>HOSPITAL Registration</h2>
+        <h2>Hospital Registration</h2>
     </div>
     <hr>
     <br>
@@ -29,7 +29,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="hospitalLocInput" class="form-label">Hospital Location</label>
-                        <input type="text" class="form-control" id="hospitalLocInput" aria-describedby="hospitalLocInput" placeholder="Hospiatal Location" required>
+                        <input type="text" class="form-control" id="hospitalLocInput" aria-describedby="hospitalLocInput" placeholder="Hospital Location" required>
                     </div>
                     <div class="mb-3">
                         <label for="hospitalPinInput" class="form-label">Hospital Pin</label>

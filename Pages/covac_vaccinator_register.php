@@ -5,12 +5,12 @@ localhost<!DOCTYPE html>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <title>COVAC User Register</title>
+    <title>Vaccinator Register</title>
 </head>
 <body>
     <br>
     <div class="container">
-        <h2>COVAC Vaccinator  Registration</h2>
+        <h2>Vaccinator Registration</h2>
     </div>
     <div class="container">
         <h5>Hello new Vaccinator please register here!</h5>
@@ -46,8 +46,8 @@ localhost<!DOCTYPE html>
                         <input type="password" class="form-control" id="passwordInput" aria-describedby="passwordInput" placeholder="Password" required>
                     </div>
                     <div class="mb-3">
-                        <label for="hospitalIdInput" class="form-label">Hospital Id</label>
-                        <input type="hospitalId" class="form-control" id="hosipitalIdInput" aria-describedby="hospitalIdInput" placeholder="Hospiatl Id" required>
+                        <label for="hospitalIdInput" class="form-label">Hospital ID</label>
+                        <input type="hospitalId" class="form-control" id="hosipitalIdInput" aria-describedby="hospitalIdInput" placeholder="Hospital ID" required>
                     </div>
                 
                    
