@@ -10,10 +10,10 @@ localhost<!DOCTYPE html>
 <body>
     <br>
     <div class="container">
-        <h2>COVAC User Registration</h2>
+        <h2>COVAC Vaccinator  Registration</h2>
     </div>
     <div class="container">
-        <h5>Hello new user please register here!</h5>
+        <h5>Hello new Vaccinator please register here!</h5>
     </div>
     <br>
     <div class="container">
@@ -22,8 +22,8 @@ localhost<!DOCTYPE html>
                 <br>
                 <form action="">
                     <div class="mb-3">
-                        <label for="userIdInput" class="form-label">User ID</label>
-                        <input type="text" class="form-control" id="userIdInput" aria-describedby="UserId" required>
+                        <label for="empIdInput" class="form-label">Emp ID</label>
+                        <input type="text" class="form-control" id="userIdInput" aria-describedby="UserId"  required>
                     </div>
                     <div class="mb-3">
                         <label for="firstnameInput" class="form-label">First Name</label>
@@ -46,13 +46,11 @@ localhost<!DOCTYPE html>
                         <input type="password" class="form-control" id="passwordInput" aria-describedby="passwordInput" placeholder="Password" required>
                     </div>
                     <div class="mb-3">
-                        <label for="aadhaarInput" class="form-label">Aadhaar Number</label>
-                        <input type="text" class="form-control" id="aadhaarInput" aria-describedby="aadhaarInput" placeholder="Aadhaar Number" required>
+                        <label for="hospitalIdInput" class="form-label">Hospital Id</label>
+                        <input type="hospitalId" class="form-control" id="hosipitalIdInput" aria-describedby="hospitalIdInput" placeholder="Hospiatl Id" required>
                     </div>
-                    <div class="mb-3">
-                        <label for="dobInput" class="form-label">Date Of Birth</label>
-                        <input type="date" class="form-control" id="dobInput" aria-describedby="dobInput" required>
-                    </div>
+                
+                   
                     <div class="mb-3">
                         <button type="submit" class="btn btn-primary">Register</button>
                     </div>
