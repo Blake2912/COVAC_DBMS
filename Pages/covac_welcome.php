@@ -1,4 +1,4 @@
-localhost<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -18,7 +18,7 @@ localhost<!DOCTYPE html>
     </div>
     <br>
     <div class="container">
-    <div class="card">
+        <div class="card">
             <br>
             <div class="container">
                 <h6>New to the Application, please click here </h6>
@@ -36,8 +36,14 @@ localhost<!DOCTYPE html>
             <br>
         </div>
         <br>
-        
-  
+        <div class="card">
+            <br>
+            <div class="container">
+                <h6>Admin Login</h6>
+                <button type="button" class="btn btn-danger" id="admin_login">Login</button>
+            </div>
+            <br>
+        </div>
     <br>
     <br>
 </body>
@@ -48,10 +54,13 @@ localhost<!DOCTYPE html>
 <script type="text/javascript">
 
     document.getElementById("register").onclick = function() {
-        location.href = "http://localhost/COVAC/COVAC_DBMS/Pages/covac_other_reg_type.php";
+        location.href = "http://localhost:8080/COVAC/COVAC_DBMS/Pages/covac_other_reg_type.php";
     };
     document.getElementById("login").onclick = function() {
-        location.href = "http://localhost/COVAC/COVAC_DBMS/Pages/covac_login.php";
+        location.href = "http://localhost:8080/COVAC/COVAC_DBMS/Pages/covac_login.php";
+    };
+    document.getElementById("admin_login").onclick = function() {
+        location.href = "http://localhost:8080/COVAC/COVAC_DBMS/Pages/covac_admin.php";
     };
     
 </script>

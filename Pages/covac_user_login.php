@@ -20,15 +20,15 @@
     <div class="card">
       <div class="container">
         <br>
-        <form>
+        <form method="post">
           <div class="mb-3">
             <label for="exampleInputPhone1" class="form-label">Phone Number</label>
-            <input type="phone" class="form-control" id="exampleInputPhone1" aria-describedby="phoneHelp">
+            <input type="phone" class="form-control" id="exampleInputPhone1" name="phone_number" aria-describedby="phoneHelp">
             <div id="emailHelp" class="form-text">We'll never share your phone number with anyone else.</div>
           </div>
           <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1">
+            <input type="password" class="form-control" name="password" id="exampleInputPassword1">
           </div>
           <button type="submit" class="btn btn-primary">Submit</button>
         </form>
@@ -52,6 +52,47 @@
 
 <script type="text/javascript">
     document.getElementById("register").onclick = function () {
-        location.href = "http://localhost/COVAC/COVAC_DBMS/Pages/covac_user_register.php";
+        location.href = "http://localhost:8080/COVAC/COVAC_DBMS/Pages/covac_user_register.php";
     };
 </script>
+
+<?php
+  $servername = "localhost";
+  $username = "root";
+  $password = "1cr19cs073";
+  $databasename = "COVAC";
+  // session_start();
+
+  $conn = mysqli_connect($servername,$username,$password,$databasename);
+
+  // Die connection if it is not successful
+  if(!$conn){
+    die(mysqli_connect_error($conn));
+  }
+  $phone_number = $_POST['phone_number'];
+  $password = $_POST['password'];
+
+  $sql = "SELECT * FROM USER WHERE phone ='$phone_number' AND `password` ='$password'";
+  $result = mysqli_query($conn,$sql);
+  $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+  $active = $row['active'];
+
+  $count = mysqli_num_rows($result);
+
+  if($count == 1) {
+    // header("location: http://localhost:8080/COVAC/COVAC_DBMS/Pages/covac_admin_dashboard.php");
+   $sql1 = "SELECT user_id FROM USER WHERE phone ='$phone_number' AND `password` ='$password'";
+   $result1 = mysqli_query($conn,$sql);
+   if ($result1->num_rows > 0) {
+    // output data of each row
+    while($row = $result1->fetch_assoc()) {
+      echo "id: " . $row["user_id"];
+    }
+  } else {
+    echo "0 results";
+  }
+  }else {
+    $error = "Your Login Name or Password is invalid";
+  }
+
+?>

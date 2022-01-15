@@ -18,22 +18,22 @@
         <div class="card">
             <div class="container">
                 <br>
-                <form action="">
+                <form action="backend/register_hospital.php">
                     <div class="mb-3">
-                        <label for="hospitalIdInput" class="form-label">Hospital ID</label>
-                        <input type="text" class="form-control" id="hospitalIdInput" aria-describedby="hospitalId"  required>
+                        <label for="hospitalIdInput" class="form-label">Hospital ID*</label>
+                        <input type="text" class="form-control" id="hospitalIdInput" aria-describedby="hospitalId" name="hospitalIdInput" required>
                     </div>
                     <div class="mb-3">
-                        <label for="hospitalnameInput" class="form-label">Hospital Name</label>
-                        <input type="text" class="form-control" id="hospitalnameInput" aria-describedby="hospitalName" placeholder="Hospital Name" required>
+                        <label for="hospitalnameInput" class="form-label">Hospital Name*</label>
+                        <input type="text" class="form-control" id="hospitalnameInput" name="hospitalnameInput" aria-describedby="hospitalName" placeholder="Hospital Name" required>
                     </div>
                     <div class="mb-3">
-                        <label for="hospitalLocInput" class="form-label">Hospital Location</label>
-                        <input type="text" class="form-control" id="hospitalLocInput" aria-describedby="hospitalLocInput" placeholder="Hospital Location" required>
+                        <label for="hospitalLocInput" class="form-label">Hospital Location*</label>
+                        <input type="text" class="form-control" id="hospitalLocInput" name="hospitalLocInput"aria-describedby="hospitalLocInput" placeholder="Hospital Location" required>
                     </div>
                     <div class="mb-3">
-                        <label for="hospitalPinInput" class="form-label">Hospital Pin</label>
-                        <input type="number" class="form-control" id="hospitalPinInput" aria-describedby="hospitalPin" placeholder="560037" required>
+                        <label for="hospitalPinInput" class="form-label">Hospital Pin*</label>
+                        <input type="number" class="form-control" id="hospitalPinInput" name="hospitalPinInput" aria-describedby="hospitalPin" placeholder="560037" required>
                     </div>
                     <p class="text-info bg-light">Note: All fields are compulsory</p>
                     <button type="submit" class="btn btn-primary" id="register_hospital">Register Hospiatal</button>
@@ -63,9 +63,9 @@
 
 <script type="text/javascript">
     document.getElementById("go_to_reg").onclick = function () {
-        location.href = "http://localhost/COVAC/COVAC_DBMS/Pages/covac_other_reg_type.php";
+        location.href = "http://localhost:8080/COVAC/COVAC_DBMS/Pages/covac_other_reg_type.php";
     };
     document.getElementById("go_to_login").onclick = function() {
-        location.href = "http://localhost/COVAC/COVAC_DBMS/Pages/covac_login.php";
+        location.href = "http://localhost:8080/COVAC/COVAC_DBMS/Pages/covac_login.php";
     };
 </script>

@@ -52,6 +52,6 @@
 
 <script type="text/javascript">
     document.getElementById("register").onclick = function () {
-        location.href = "http://localhost/COVAC/COVAC_DBMS/Pages/covac_vaccine_register.php";
+        location.href = "http://localhost:8080/COVAC/COVAC_DBMS/Pages/covac_vaccine_register.php";
     };
 </script>

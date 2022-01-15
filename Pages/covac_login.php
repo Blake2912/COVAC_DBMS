@@ -1,4 +1,4 @@
-localhost<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,7 +8,7 @@ localhost<!DOCTYPE html>
     <title>Login</title>
 </head>
 <body>
-<br>
+    <br>
     <div class="container">
         <h2>Login</h2>
     </div>
@@ -29,27 +29,9 @@ localhost<!DOCTYPE html>
         <br>
         <div class="card">
             <br>
-            <div class="container">
-                <h6>To Login as a hospital please click here</h6>
-                <button type="button" class="btn btn-info" id="hospital_login">Hospital Login </button>
-            </div>
-            <br>
-        </div>
-        <br>
-        <div class="card">
-            <br>
                 <div class="container">
                     <h6>To Login as a vaccinator please click here</h6>
                     <button type="button" class="btn btn-warning" id="vaccinator_login">Vaccinator Login </button>
-                </div>
-            <br>
-        </div>
-        <br>
-        <div class="card">
-            <br>
-                <div class="container">
-                    <h6>To Login as a vaccine please click here</h6>
-                    <button type="button" class="btn btn-danger" id="vaccine_login"> Vaccine Login</button>
                 </div>
             <br>
         </div>
@@ -70,18 +52,12 @@ localhost<!DOCTYPE html>
 <script type="text/javascript">
 
     document.getElementById("go_to_welcome").onclick = function() {
-        location.href = "http://localhost/COVAC/COVAC_DBMS/Pages/covac_welcome.php";
-    };
-    document.getElementById("vaccine_login").onclick = function() {
-        location.href = "http://localhost/COVAC/COVAC_DBMS/Pages/covac_vaccine_login.php";
+        location.href = "http://localhost:8080/COVAC/COVAC_DBMS/Pages/covac_welcome.php";
     };
     document.getElementById("user_login").onclick = function() {
-        location.href = "http://localhost/COVAC/COVAC_DBMS/Pages/covac_user_login.php";
+        location.href = "http://localhost:8080/COVAC/COVAC_DBMS/Pages/covac_user_login.php";
     };
     document.getElementById("vaccinator_login").onclick = function() {
-        location.href = "http://localhost/COVAC/COVAC_DBMS/Pages/covac_vaccinator_login.php";
-    };
-    document.getElementById("hospital_login").onclick = function() {
-        location.href = "http://localhost/COVAC/COVAC_DBMS/Pages/covac_hospital_login.php";
+        location.href = "http://localhost:8080/COVAC/COVAC_DBMS/Pages/covac_vaccinator_login.php";
     };
 </script>

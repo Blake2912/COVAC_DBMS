@@ -18,22 +18,22 @@
         <div class="card">
             <div class="container">
                 <br>
-                <form action="">
+                <form action="backend/register_vaccine.php">
                     <div class="mb-3">
                         <label for="vaccineIdInput" class="form-label">Vaccine ID</label>
-                        <input type="number" class="form-control" id="vaccineIdInput" aria-describedby="vaccineId" required>
+                        <input type="number" class="form-control" id="vaccineIdInput" name="vaccineIdInput" aria-describedby="vaccineId" required>
                     </div>
                     <div class="mb-3">
                         <label for="vaccinenameInput" class="form-label">Vaccine Name</label>
-                        <input type="text" class="form-control" id="vaccinenameInput" aria-describedby="vaccineName" placeholder="COVAXIN" required>
+                        <input type="text" class="form-control" id="vaccinenameInput" name="vaccinenameInput"aria-describedby="vaccineName" placeholder="COVAXIN" required>
                     </div>
                     <div class="mb-3">
                         <label for="vaccineDevInput" class="form-label">Developed by</label>
-                        <input type="text" class="form-control" id="vaccineDevInput" aria-describedby="vaccineDevInput" placeholder="Bharat BioTech" required>
+                        <input type="text" class="form-control" id="vaccineDevInput" name="vaccineDevInput" aria-describedby="vaccineDevInput" placeholder="Bharat BioTech" required>
                     </div>
                     <div class="mb-3">
                         <label for="vaccineTime" class="form-label">Time for Second Dose(in days)</label>
-                        <input type="number" class="form-control" id="vaccineTime" aria-describedby="vaccineTime" placeholder="10" required>
+                        <input type="number" class="form-control" id="vaccineTime" name="vaccineTime" aria-describedby="vaccineTime" placeholder="10" required>
                     </div>
                     <p class="text-info bg-light">Note: All fields are compulsory</p>
                     <button type="submit" class="btn btn-primary" id="register_vaccine">Register Vaccine</button>
@@ -63,9 +63,9 @@
 
 <script type="text/javascript">
     document.getElementById("go_to_reg").onclick = function () {
-        location.href = "http://localhost/COVAC/COVAC_DBMS/Pages/covac_other_reg_type.php";
+        location.href = "http://localhost:8080/COVAC/COVAC_DBMS/Pages/covac_other_reg_type.php";
     };
     document.getElementById("go_to_login").onclick = function() {
-        location.href = "http://localhost/COVAC/COVAC_DBMS/Pages/covac_login.php";
+        location.href = "http://localhost:8080/COVAC/COVAC_DBMS/Pages/covac_login.php";
     };
 </script>

@@ -1,4 +1,4 @@
-localhost<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -20,41 +20,41 @@ localhost<!DOCTYPE html>
         <div class="card">
             <div class="container">
                 <br>
-                <form action="">
+                <form action="backend/register_user.php" method="post" name="user_registration">
                     <div class="mb-3">
-                        <label for="userIdInput" class="form-label">User ID</label>
-                        <input type="text" class="form-control" id="userIdInput" aria-describedby="UserId" required>
+                        <label for="userIdInput" class="form-label">User ID*</label>
+                        <input type="text" class="form-control" id="userIdInput" aria-describedby="UserId" required name="userIdInput">
                     </div>
                     <div class="mb-3">
-                        <label for="firstnameInput" class="form-label">First Name</label>
-                        <input type="text" class="form-control" id="firstnameInput" aria-describedby="firstName" placeholder="John" required>
+                        <label for="firstnameInput" class="form-label">First Name*</label>
+                        <input type="text" class="form-control" id="firstnameInput" name="firstnameInput"aria-describedby="firstName" placeholder="John" required>
                     </div>
                     <div class="mb-3">
-                        <label for="lastnameImput" class="form-label">Last Name</label>
-                        <input type="text" class="form-control" id="lastnameInput" aria-describedby="LastName" placeholder="Doe" required>
+                        <label for="lastnameImput" class="form-label">Last Name*</label>
+                        <input type="text" class="form-control" id="lastnameInput" name="lastnameInput" aria-describedby="LastName" placeholder="Doe" required>
                     </div>
                     <div class="mb-3">
-                        <label for="phoneNumberInput" class="form-label">Phone Number</label>
-                        <input type="text" class="form-control" id="phoneNumberInput" aria-describedby="LastName" placeholder="Phone" required>
+                        <label for="phoneNumberInput" class="form-label">Phone Number*</label>
+                        <input type="text" class="form-control" id="phoneNumberInput" name="phoneNumberInput" aria-describedby="LastName" placeholder="Phone" required>
                     </div>
                     <div class="mb-3">
-                        <label for="emailInput" class="form-label">Email Address</label>
-                        <input type="email" class="form-control" id="emailInput" aria-describedby="emailInput" placeholder="name@example.com" required>
+                        <label for="emailInput" class="form-label">Email Address*</label>
+                        <input type="email" class="form-control" id="emailInput" name="emailInput" aria-describedby="emailInput" placeholder="name@example.com" required>
                     </div>
                     <div class="mb-3">
-                        <label for="passwordInput" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="passwordInput" aria-describedby="passwordInput" placeholder="Password" required>
+                        <label for="passwordInput" class="form-label">Password*</label>
+                        <input type="password" class="form-control" id="passwordInput" name="passwordInput" aria-describedby="passwordInput" placeholder="Password" required>
                     </div>
                     <div class="mb-3">
-                        <label for="aadhaarInput" class="form-label">Aadhaar Number</label>
-                        <input type="text" class="form-control" id="aadhaarInput" aria-describedby="aadhaarInput" placeholder="Aadhaar Number" required>
+                        <label for="aadhaarInput" class="form-label">Aadhaar Number*</label>
+                        <input type="text" class="form-control" id="aadhaarInput" name="aadhaarInput" aria-describedby="aadhaarInput" placeholder="Aadhaar Number" required>
                     </div>
                     <div class="mb-3">
-                        <label for="dobInput" class="form-label">Date Of Birth</label>
-                        <input type="date" class="form-control" id="dobInput" aria-describedby="dobInput" required>
+                        <label for="dobInput" class="form-label">Date Of Birth*</label>
+                        <input type="date" class="form-control" id="dobInput" name="dobInput" aria-describedby="dobInput" required>
                     </div>
                     <div class="mb-3">
-                        <button type="submit" class="btn btn-primary">Register</button>
+                        <button type="submit" class="btn btn-primary" name="register">Register</button>
                     </div>
                     <p class="text-info bg-light">Note: All fields are compulsory</p>
                 </form>
@@ -83,9 +83,9 @@ localhost<!DOCTYPE html>
 
 <script type="text/javascript">
     document.getElementById("go_to_login").onclick = function() {
-        location.href = "http://localhost/COVAC/COVAC_DBMS/Pages/covac_login.php";
+        location.href = "http://localhost:8080/COVAC/COVAC_DBMS/Pages/covac_login.php";
     };
     document.getElementById("go_to_reg").onclick = function () {
-        location.href = "http://localhost/COVAC/COVAC_DBMS/Pages/covac_other_reg_type.php";
+        location.href = "http://localhost:8080/COVAC/COVAC_DBMS/Pages/covac_other_reg_type.php";
     };
 </script>
