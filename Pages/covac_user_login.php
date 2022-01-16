@@ -61,7 +61,7 @@
   $username = "root";
   $password = "1cr19cs073";
   $databasename = "COVAC";
-  // session_start();
+  session_start();
 
   $conn = mysqli_connect($servername,$username,$password,$databasename);
 
@@ -80,13 +80,14 @@
   $count = mysqli_num_rows($result);
 
   if($count == 1) {
-    // header("location: http://localhost:8080/COVAC/COVAC_DBMS/Pages/covac_admin_dashboard.php");
    $sql1 = "SELECT user_id FROM USER WHERE phone ='$phone_number' AND `password` ='$password'";
    $result1 = mysqli_query($conn,$sql);
    if ($result1->num_rows > 0) {
     // output data of each row
     while($row = $result1->fetch_assoc()) {
-      echo "id: " . $row["user_id"];
+      $usr_id = $row["user_id"];
+      $_SESSION['user_id'] = $usr_id;
+      header("location: http://localhost:8080/COVAC/COVAC_DBMS/Pages/covac_user_home.php");
     }
   } else {
     echo "0 results";
