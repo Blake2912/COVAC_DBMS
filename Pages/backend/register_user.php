@@ -1,6 +1,3 @@
-<?php
-require "connection.php"
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,11 +10,9 @@ require "connection.php"
 </head>
 <body>
     <?php
-
-        $conn = mysqli_connect("localhost", "root", "1cr19cs073", "COVAC");
-            
+        $conn4 = mysqli_connect("localhost", "root", "1cr19cs073", "COVAC"); 
         // Check connection
-        if($conn === false){
+        if($conn4 === false){
             die("ERROR: Could not connect. " 
                 . mysqli_connect_error());
         }
@@ -31,11 +26,10 @@ require "connection.php"
         $dob = $_REQUEST['dobInput'];
         
         // Performing insert query execution
-        // here our table name is college
-        $sql = "INSERT INTO USER  VALUES ('$user_id','$first_name', 
-            '$last_name','$phone_number','$email','$password','$aadhaar_number','$dob')";
+        // here our table name is user
+        $sql = "INSERT INTO USER  VALUES ('$user_id','$first_name','$last_name','$email','$password','$aadhaar_number','$dob','$phone_number')";
         
-        if(mysqli_query($conn, $sql)){
+        if(mysqli_query($conn4, $sql)){
             echo "<h3>User Created successfully" 
                 . " Please login with your phone number and password</h3>"; 
 
@@ -43,10 +37,10 @@ require "connection.php"
                 . "$phone_number\n $aadhaar_number\n $email");
         } else{
             echo "ERROR: Hush! Sorry $sql. " 
-                . mysqli_error($conn);
+                . mysqli_error($conn4);
         }
         // Close connection
-        mysqli_close($conn);
+        mysqli_close($conn4);
     ?>
     <div class="contaner">
         <div class="container">

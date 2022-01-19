@@ -27,7 +27,7 @@
         // Performing insert query execution
         // here our table name is college
         $sql = "INSERT INTO VACCINATOR_DETAIL  VALUES ('$emp_id','$first_name', 
-        '$last_name','$phone_number','$password','$email','$hospital_id')";
+        '$last_name','$password','$email','$hospital_id','$phone_number')";
 
         if(mysqli_query($conn, $sql)){
             echo "<h3>Vaccinator Created successfully" 
