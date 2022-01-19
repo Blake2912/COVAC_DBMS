@@ -52,12 +52,12 @@
 <script type="text/javascript">
 
     document.getElementById("go_to_welcome").onclick = function() {
-        location.href = "http://localhost:8080/COVAC/COVAC_DBMS/Pages/covac_welcome.php";
+        location.href = "covac_welcome.php";
     };
     document.getElementById("user_login").onclick = function() {
-        location.href = "http://localhost:8080/COVAC/COVAC_DBMS/Pages/covac_user_login.php";
+        location.href = "covac_user_login.php";
     };
     document.getElementById("vaccinator_login").onclick = function() {
-        location.href = "http://localhost:8080/COVAC/COVAC_DBMS/Pages/covac_vaccinator_login.php";
+        location.href = "covac_vaccinator_login.php";
     };
 </script>

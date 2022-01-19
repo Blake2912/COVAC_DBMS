@@ -68,7 +68,7 @@ $active = $row['active'];
 $count = mysqli_num_rows($result);
 
 if($count == 1) {
-  header("location: http://localhost:8080/COVAC/COVAC_DBMS/Pages/covac_admin_dashboard.php");
+  header("location: covac_admin_dashboard.php");
 }else {
   $error = "Your Login Name or Password is invalid";
 }

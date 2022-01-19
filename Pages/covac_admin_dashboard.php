@@ -66,18 +66,18 @@
 <script type="text/javascript">
 
     document.getElementById("go_to_welcome").onclick = function() {
-        location.href = "http://localhost:8080/COVAC/COVAC_DBMS/Pages/covac_welcome.php";
+        location.href = "covac_welcome.php";
     };
     document.getElementById("vaccine_login").onclick = function() {
-        location.href = "http://localhost:8080/COVAC/COVAC_DBMS/Pages/covac_vaccine_login.php";
+        location.href = "covac_vaccine_login.php";
     };
     document.getElementById("hospital_login").onclick = function() {
-        location.href = "http://localhost:8080/COVAC/COVAC_DBMS/Pages/covac_hospital_login.php";
+        location.href = "covac_hospital_login.php";
     };
     document.getElementById("hospital_reg").onclick = function() {
-        location.href = "http://localhost:8080/COVAC/COVAC_DBMS/Pages/covac_hospital_register.php";
+        location.href = "covac_hospital_register.php";
     };
     document.getElementById("reg_vaccine").onclick = function() {
-        location.href = "http://localhost:8080/COVAC/COVAC_DBMS/Pages/covac_vaccine_register.php";
+        location.href = "covac_vaccine_register.php";
     };
 </script>

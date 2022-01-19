@@ -87,7 +87,7 @@
     while($row = $result1->fetch_assoc()) {
       $usr_id = $row["user_id"];
       $_SESSION['user_id'] = $usr_id;
-      header("location: http://localhost:8080/COVAC/COVAC_DBMS/Pages/covac_user_home.php");
+      header("location: covac_user_home.php");
     }
   } else {
     echo "0 results";

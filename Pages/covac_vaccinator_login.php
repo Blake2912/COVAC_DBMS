@@ -52,7 +52,7 @@
 
 <script type="text/javascript">
     document.getElementById("register").onclick = function () {
-        location.href = "http://localhost:8080/COVAC/COVAC_DBMS/Pages/covac_vaccinator_register.php";
+        location.href = "covac_vaccinator_register.php";
     };
 </script>
 
@@ -87,7 +87,7 @@
     while($row = $result1->fetch_assoc()) {
       $usr_id = $row["emp_id"];
       $_SESSION['emp_id'] = $usr_id;
-      header("location: http://localhost:8080/COVAC/COVAC_DBMS/Pages/covac_vaccinator_home.php");
+      header("location: covac_vaccinator_home.php");
     }
   } else {
     echo "0 results";
