@@ -45,6 +45,10 @@
             <br>
         </div>
     <br>
+    <div class="container">
+        <img src="assets/home_page_vaccine.jpeg" class="img-fluid" width="550px"height="550px">
+    <div>
+    <br>
     <br>
 </body>
 </html>
