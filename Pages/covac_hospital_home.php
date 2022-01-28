@@ -10,7 +10,7 @@
 <body>
     <div class="container">
         <br>
-        <h2>Hello 
+        <h2>Welcome 
             <?php 
             $conn = mysqli_connect("localhost", "root", "1cr19cs073", "COVAC");
             session_start();
@@ -30,11 +30,13 @@
         </h2>
         <hr>
         <br>
+
         <div class="container">
             <div class="card">
                 <div class="container">
                     <br>
                     <h3>Hospital Details</h3>
+                    <br>
                     <?php
                         $conn = mysqli_connect("localhost", "root", "1cr19cs073", "COVAC");
                         session_start();
@@ -70,12 +72,144 @@
             </div>
         </div>
 
+        <br>
+        <br>
+        <div class="container">
+            <div class="card">
+                <div class="container">
+                    <br>
+                    <h4>Vaccinators Registered</h4>
+                    <br>
+                    <?php
+                    $conn = mysqli_connect("localhost", "root", "1cr19cs073", "COVAC");
+                    session_start();
+                    if($conn === false){
+                        die("ERROR: Could not connect. " . mysqli_connect_error());
+                    }
+                    $hospitalid = $_SESSION['hospital_id'];
+                    $sql = "SELECT * FROM VACCINATOR_DETAIL WHERE hospital_id=$hospitalid";
+                    $result = mysqli_query($conn,$sql);
+                    if ($result->num_rows > 0) {
+                        ?>
+                        <table class="table">
+                        <thead>
+                            <tr>
+                            <th scope="col">Employee ID</th>
+                            <th scope="col">Employee First Name</th>
+                            <th scope="col">Employee Last Name</th>
+                            <th scope="col">Employee Phone</th>
+                            <th scope="col">Employee Email</th>
+                            </tr>
+                        </thead>
+                        <?php
+                        while($row = $result->fetch_assoc()) {
+                            ?>
+                            <tr>
+                                <th scope="row"><?php echo $row['emp_id'];?></th>
+                                <td><?php echo $row['first_name'];?> </td>
+                                <td><?php echo $row['last_name'];?> </td>
+                                <td><?php echo $row['phone_number'];?></td> 
+                                <td><?php echo $row['email'];?> </td>
+                            </tr>
+                            <?php
+                        }
+                        ?>
+                        </table>
+                        <?php
+                    }
+                    else{
+                        ?>
+                        <div class="container">
+                            No Vaccinators Found for this hospital
+                        </div>
+                        <?php
+                    }
+                    mysqli_close($conn);
+                    ?>
+                </div>
+                <br>
+            </div>
+        </div>
         
+        <br>
+        <br>
+        <div class="container">
+            <div class="card">
+                <div class="container">
+                    <br>
+                    <h4>Vaccine Inventory</h4>
+                    <br>
+                    <?php
+                    $conn = mysqli_connect("localhost", "root", "1cr19cs073", "COVAC");
+                    session_start();
+                    if($conn === false){
+                        die("ERROR: Could not connect. " . mysqli_connect_error());
+                    }
+                    $hospitalid = $_SESSION['hospital_id'];
+                    $sql = "SELECT * FROM VACCINE V,VACCINE_INVENTORY I WHERE V.vaccine_id=I.vaccine_id AND I.hospital_id='$hospitalid'";
+                    $result = mysqli_query($conn,$sql);
+                    if ($result->num_rows > 0) {
+                        ?>
+                        <table class="table">
+                        <thead>
+                            <tr>
+                            <th scope="col">Vaccine ID</th>
+                            <th scope="col">Vaccine Name</th>
+                            <th scope="col">Developed By</th>
+                            <th scope="col">Time for 2nd Dose</th>
+                            <th scope="col">Last updated on</th>
+                            <th scope="col">Avaliable doses</th>
+                            </tr>
+                        </thead>
+                        <?php
+                        while($row = $result->fetch_assoc()) {
+                            ?>
+                            <tr>
+                                <th scope="row"><?php echo $row['vaccine_id'];?></th>
+                                <td><?php echo $row['vaccine_name'];?> </td>
+                                <td><?php echo $row['dev_company'];?> </td>
+                                <td><?php echo $row['time_for_sec_dose'];?></td> 
+                                <td><?php echo $row['check_date'];?> </td>
+                                <td><?php echo $row['doses_available'];?> </td>
+                            </tr>
+                            <?php
+                        }
+                        ?>
+                        </table>
+                        <br>
+                        <?php
+                    }
+                    else{
+                        ?>
+                        <div class="container">
+                            No Vaccines Available, please update the vaccines invetory!
+                        </div>
+                        <?php
+                    }
+                    mysqli_close($conn);
+                    ?>
+                </div>
+            </div>
+        </div>
 
-        
+
+        <br>
+        <div class="container">
+            <div class="logout">
+                <button type="button" id="logout"class="btn btn-outline-dark">Log Out</button>
+            </div>
+        </div>
     </div>
+    <br>
+    <br>
 </body>
 </html>
+
+<script type="text/javascript">
+    document.getElementById("logout").onclick = function () {
+        location.href = "covac_welcome.php";
+    };
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
