@@ -346,6 +346,7 @@
                                         else{
                                             echo "Please contact COVAC Customer Support!";
                                         }
+                                        mysqli_close($conn);
                                 ?>
                             </div>
                             <br>

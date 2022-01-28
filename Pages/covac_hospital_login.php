@@ -20,17 +20,16 @@
     <div class="card">
       <div class="container">
         <br>
-        <form>
+        <form method="post">
           <div class="mb-3">
-            <label for="hospitalid" class="form-label">Hospital  Id</label>
-            <input type="number" class="form-control" id="hospitalid" aria-describedby="hospitalid">
-           
+            <label for="hospitalid" class="form-label">Hospital ID</label>
+            <input type="text" class="form-control" name="hospital_id" id="hospital_id">
           </div>
           <div class="mb-3">
             <label for="hospitalname" class="form-label">Hospital Name</label>
-            <input type="text" class="form-control" id="hospitalid">
+            <input type="text" class="form-control" name="hospital_name" id="hospital_name">
           </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="submit" class="btn btn-primary">Login</button>
         </form>
         <br>
       </div>
@@ -40,7 +39,7 @@
   <div class="container">
     <div class="p-3 mb-2 bg-warning text-dark">
       <p>Still Not Registered to our service register here!</p>
-      <button type="submit" class="btn btn-secondary" id="register">Register</button>
+      <button type="button" class="btn btn-secondary" id="register">Register</button>
     </div>
   </div>
 </body>
@@ -55,3 +54,37 @@
         location.href = "covac_hospital_register.php";
     };
 </script>
+
+<?php
+    $conn = mysqli_connect("localhost", "root", "1cr19cs073", "COVAC");
+    session_start();
+    if($conn === false){
+      die("ERROR: Could not connect. " . mysqli_connect_error());
+    }
+
+    $hospitalId = $_POST['hospital_id'];
+    $hospitalName = $_POST['hospital_name'];
+
+    $sql = "SELECT * FROM HOSPITAL WHERE hospital_id='$hospitalId' AND hospital_name='$hospitalName'";
+    $result = mysqli_query($conn,$sql);
+    // echo var_dump($result);
+
+    $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+    $active = $row['active'];
+    $count = mysqli_num_rows($result);
+
+    if($count == 1) {
+      if ($result->num_rows > 0) {
+       // output data of each row
+      //  echo "Login Sucess!";
+      echo $hospitalId;
+      $_SESSION['hospital_id'] = $hospitalId;
+      header("location: covac_hospital_home.php");
+     } else {
+       echo "0 results";
+     }
+     }else {
+       $error = "Your Login Name or Password is invalid";
+     }
+     mysqli_close($conn);
+?>

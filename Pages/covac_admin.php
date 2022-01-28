@@ -73,5 +73,7 @@ if($count == 1) {
   $error = "Your Login Name or Password is invalid";
 }
 
+mysqli_close($conn);
+
 ?>
 
