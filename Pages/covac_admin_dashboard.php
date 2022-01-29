@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <title>Document</title>
+    <title>Admin Dashboard</title>
 </head>
 <body>
     <div class="container">
@@ -35,17 +35,8 @@
             <div class="card">
                 <br>
                 <div class="container">
-                    <h6>To Login as a vaccine please click here</h6>
-                    <button type="button" class="btn btn-danger" id="vaccine_login"> Vaccine Login</button>
-                </div>
-                <br>
-            </div>
-            <br>
-            <div class="card">
-                <br>
-                <div class="container">
-                    <h6>To Login as a hospital please click here</h6>
-                    <button type="button" class="btn btn-info" id="hospital_login">Hospital Login </button>
+                    <h6>Miscellaneous Services</h6>
+                    <button type="button" class="btn btn-secondary" id="misc"> Misc</button>
                 </div>
                 <br>
             </div>
@@ -53,7 +44,7 @@
         </div>
         <div class="contaner">
             <div class="container">
-                <button type="button" class="btn btn-outline-success" id="go_to_welcome">Go to welcome</button>
+                <button type="button" class="btn btn-outline-success" id="go_to_welcome">Log out</button>
             </div>
         </div>
     </div>
@@ -67,12 +58,6 @@
 
     document.getElementById("go_to_welcome").onclick = function() {
         location.href = "covac_welcome.php";
-    };
-    document.getElementById("vaccine_login").onclick = function() {
-        location.href = "covac_vaccine_login.php";
-    };
-    document.getElementById("hospital_login").onclick = function() {
-        location.href = "covac_hospital_login.php";
     };
     document.getElementById("hospital_reg").onclick = function() {
         location.href = "covac_hospital_register.php";

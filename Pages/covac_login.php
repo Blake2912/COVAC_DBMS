@@ -35,6 +35,15 @@
                 </div>
             <br>
         </div>
+        <br>
+        <div class="card">
+            <br>
+            <div class="container">
+                <h6>To Login as a hospital please click here</h6>
+                <button type="button" class="btn btn-info" id="hospital_login">Hospital Login </button>
+            </div>
+            <br>
+        </div>
     </div>
     <br>
     <div class="contaner">
@@ -59,5 +68,8 @@
     };
     document.getElementById("vaccinator_login").onclick = function() {
         location.href = "covac_vaccinator_login.php";
+    };
+    document.getElementById("hospital_login").onclick = function() {
+        location.href = "covac_hospital_login.php";
     };
 </script>
