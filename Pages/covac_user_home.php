@@ -369,6 +369,10 @@
         </div>
         <br>
         <br>
+        <div class="refresh">
+        <button type="button" id="refresh" name="refresh"class="btn btn-outline-dark">Refresh</button>
+        </div>
+        <br>
         <div class="logout">
             <button type="button" id="logout"class="btn btn-outline-dark">Log Out</button>
         </div>
@@ -397,7 +401,7 @@
             $insert_first_dose = "INSERT INTO USER_VACCINATION_FIRST VALUES('$user_id1','$first_dose_date',NULL,'$hospital_id_1','$vaccine_id_1')";
             $first_dose_result = mysqli_query($conn1,$insert_first_dose);
             if($first_dose_result){
-                echo "Vaccine Scheduled Refresh your page to view the result!";
+                echo "<script type='text/javascript'>alert('Vaccine Scheduled Refresh your page to view the result!');</script>";
             } else{
                 echo "ERROR: Hush! Sorry $sql. " 
                     . mysqli_error($conn1);
@@ -420,7 +424,7 @@
             $insert_second_dose = "INSERT INTO USER_VACCINATION_SECOND VALUES('$user_id2','$second_dose_date',NULL,'$hospital_id_2','$vaccine_id_2')";
             $second_dose_result = mysqli_query($conn2,$insert_second_dose);
             if($second_dose_result){
-                echo "Vaccine Scheduled Refresh your page to view the result!";
+                echo "<script type='text/javascript'>alert('Vaccine Scheduled Refresh your page to view the result!');</script>";
             } else{
                 echo "ERROR: Hush! Sorry $sql. " 
                     . mysqli_error($conn2);
@@ -438,5 +442,8 @@
 <script type="text/javascript">
     document.getElementById("logout").onclick = function () {
         location.href = "covac_welcome.php";
+    };
+    document.getElementById("refresh").onclick = function () {
+        location.href = "covac_user_home.php";
     };
 </script>

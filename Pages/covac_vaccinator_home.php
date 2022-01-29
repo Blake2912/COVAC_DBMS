@@ -205,7 +205,7 @@
                 <br>
                 <h5>Administer vaccination</h5>
                 <div class="container">
-                    <p>Enter the user phone and aadhaar number to adminster first dose of the vaccine</p>
+                    <p>Enter the user phone and aadhaar number to adminster second dose of the vaccine</p>
                     <form method="post">
                         <div class="mb-3">
                             <label for="phoneInput" class="form-label">Patient Phone Number</label>
@@ -223,6 +223,10 @@
             </div>
         </div>
         <br>
+        <br>
+        <div class="refresh">
+        <button type="button" id="refresh" name="refresh"class="btn btn-outline-dark">Refresh</button>
+        </div>
         <br>
         <div class="logout">
             <button type="button" id="logout"class="btn btn-outline-dark">Log Out</button>
@@ -256,7 +260,7 @@ function button1() {
     $update_first_dose = "UPDATE USER_VACCINATION_FIRST SET vaccinator_id = '$emp_id2' WHERE USER_VACCINATION_FIRST.user_id IN (SELECT user_id FROM USER U WHERE U.phone = '$phoneInput' AND U.aadhar_number = '$aadhaarInput');";
     $first_dose_result = mysqli_query($conn1,$update_first_dose);
     if($first_dose_result){
-        echo "The patient is vaccinated! Refresh your page to view the result!";
+        echo "<script type='text/javascript'>alert('The patient is vaccinated!');</script>";
     } else{
         echo "ERROR: Hush! Sorry $sql. " 
             . mysqli_error($conn1);
@@ -279,7 +283,7 @@ function button2() {
     $update_second_dose = "UPDATE USER_VACCINATION_SECOND SET vaccinator_id = '$emp_id3' WHERE USER_VACCINATION_SECOND.user_id IN (SELECT user_id FROM USER U WHERE U.phone = '$phoneInput2' AND U.aadhar_number = '$aadhaarInput2');";
     $second_dose_result = mysqli_query($conn2,$update_second_dose);
     if($second_dose_result){
-        echo "Vaccine Scheduled Refresh your page to view the result!";
+        echo "<script type='text/javascript'>alert('The patient is vaccinated!');</script>";
     } else{
         echo "ERROR: Hush! Sorry $sql. " 
             . mysqli_error($conn2);
@@ -294,5 +298,8 @@ function button2() {
 <script type="text/javascript">
     document.getElementById("logout").onclick = function () {
         location.href = "covac_welcome.php";
+    };
+    document.getElementById("refresh").onclick = function () {
+        location.href = "covac_vaccinator_home.php";
     };
 </script>
