@@ -65,4 +65,7 @@
     document.getElementById("reg_vaccine").onclick = function() {
         location.href = "covac_vaccine_register.php";
     };
+    document.getElementById("misc").onclick = function() {
+        location.href = "covac_admin_misc.php";
+    };
 </script>
