@@ -92,7 +92,7 @@
                                     <th scope="col">Hospital ID</th>
                                     <th scope="col">Hospital Name</th>
                                     <th scope="col">Location</th>
-                                    <th scope="col">PinCode</th>
+                                    <th scope="col">Pin Code</th>
                                     </tr>
                                 </thead>
                             <?php
@@ -179,6 +179,80 @@
                 </div>
             </div>
 
+            <br>
+            <br>
+            <div class="card">
+                <div class="container">
+                    <br>
+                    <h5>Update Vaccine Details</h5>
+                    <div class="container">
+                        <br>
+                        <form method="post">
+                            <div class="mb-3">
+                                <label for="vaccine_id" class="form-label">Vaccine ID</label>
+                                <input type="text" class="form-control" id="vaccine_id" name="vaccine_id" aria-describedby="phoneHelp">
+                            </div>
+                            <div class="mb-3">
+                                <label for="vaccine_name" class="form-label">Vaccine Name</label>
+                                <input type="text" class="form-control" id="vaccine_name" name="vaccine_name" aria-describedby="phoneHelp">
+                            </div>
+                            <div class="mb-3">
+                                <label for="dose_vaccine" class="form-label">Number of Days for 2nd Dose</label>
+                                <input type="text" class="form-control" id="dose_vaccine" name="dose_vaccine" aria-describedby="phoneHelp">
+                            </div>
+                            <div class="container">
+                                <button type="submit" class="btn btn-warning" name="update_vaccine">Update Vaccine Details</button>
+                            </div>
+                        </form>
+                        <br>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <div class="card">
+                <div class="container">
+                    <br>
+                    <h5>Update Hospital Details</h5>
+                    <div class="container">
+                        <br>
+                        <form method="post">
+                            <div class="mb-3">
+                                <label for="hospital_id" class="form-label">Hospital ID</label>
+                                <input type="text" class="form-control" id="hospital_id" name="hospital_id" aria-describedby="phoneHelp">
+                            </div>
+                            <div class="mb-3">
+                                <label for="hospital_name" class="form-label">Hospital Name</label>
+                                <input type="text" class="form-control" id="hospital_name" name="hospital_name" aria-describedby="phoneHelp">
+                            </div>
+                            <div class="mb-3">
+                                <label for="loc_hospital" class="form-label">Hospital Location</label>
+                                <input type="text" class="form-control" id="loc_hospital" name="loc_hospital" aria-describedby="phoneHelp">
+                            </div>
+                            <div class="mb-3">
+                                <label for="pin_hospital" class="form-label">Pin Code</label>
+                                <input type="text" class="form-control" id="pin_hospital" name="pin_hospital" aria-describedby="phoneHelp">
+                            </div>
+                            <div class="container">
+                                <button type="submit" class="btn btn-warning" name="update_hospital">Update Hospital Details</button>
+                            </div>
+                        </form>
+                        <br>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class="container">
+                <button type="button" id="refresh" name="refresh"class="btn btn-outline-dark">Refresh</button>
+            </div>
+            <br>
+            <div class="container">
+                <div class="logout">
+                    <button type="button" id="logout"class="btn btn-outline-dark">Log Out</button>
+                </div>
+            </div>
         </div>
         <br>
         <br>
@@ -186,5 +260,69 @@
 </body>
 </html>
 
+<script type="text/javascript">
+    document.getElementById("logout").onclick = function () {
+        location.href = "covac_welcome.php";
+    };
+    document.getElementById("refresh").onclick = function () {
+        location.href = "covac_admin_misc.php";
+    };
+</script>
+
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+
+<?php
+    if(array_key_exists('update_vaccine', $_POST)) {
+        update_vaccine();
+        // echo "<script type='text/javascript'>alert('Under Developemnt');</script>";
+    }
+    else if(array_key_exists('update_hospital', $_POST)){
+        update_hospital();
+        // echo "<script type='text/javascript'>alert('Under Developemnt');</script>";
+    }
+
+    function update_vaccine(){
+        $conn = mysqli_connect("localhost", "root", "1cr19cs073", "COVAC");
+        session_start();
+        if($conn === false){
+        die("ERROR: Could not connect. " . mysqli_connect_error());
+        }
+
+        $no_of_days = $_POST['dose_vaccine'];
+        $vaccine_id = $_POST['vaccine_id'];
+        $vaccine_name = $_POST['vaccine_name'];
+        $sql = "UPDATE VACCINE SET time_for_sec_dose='$no_of_days' WHERE vaccine_id='$vaccine_id' AND vaccine_name='$vaccine_name'";
+        $update_result = mysqli_query($conn,$sql);
+        if($update_result){
+            echo "<script type='text/javascript'>alert('Vaccine Details Updated!');</script>";
+        } else{
+            echo "ERROR: Hush! Sorry $sql." 
+                . mysqli_error($conn);
+        }
+        mysqli_close($conn);
+    }
+
+    function update_hospital(){
+        $conn = mysqli_connect("localhost", "root", "1cr19cs073", "COVAC");
+        session_start();
+        if($conn === false){
+        die("ERROR: Could not connect. " . mysqli_connect_error());
+        }
+
+        $hospital_id = $_POST['hospital_id'];
+        $hospital_name = $_POST['hospital_name'];
+        $loc_hospital = $_POST['loc_hospital'];
+        $pin_hospital = $_POST['pin_hospital'];
+
+        $sql = "UPDATE HOSPITAL SET hospital_name='$hospital_name',hospital_loc='$loc_hospital',hospital_pin='$pin_hospital' WHERE hospital_id='$hospital_id'";
+        $update_result = mysqli_query($conn,$sql);
+        if($update_result){
+            echo "<script type='text/javascript'>alert('Hospital Details Updated!');</script>";
+        } else{
+            echo "ERROR: Hush! Sorry $sql." 
+                . mysqli_error($conn);
+        }
+        mysqli_close($conn);
+    }
+?>
