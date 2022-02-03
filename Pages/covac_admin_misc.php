@@ -190,15 +190,15 @@
                         <form method="post">
                             <div class="mb-3">
                                 <label for="vaccine_id" class="form-label">Vaccine ID</label>
-                                <input type="text" class="form-control" id="vaccine_id" name="vaccine_id" aria-describedby="phoneHelp">
+                                <input type="text" class="form-control" id="vaccine_id" name="vaccine_id" aria-describedby="phoneHelp" required>
                             </div>
                             <div class="mb-3">
                                 <label for="vaccine_name" class="form-label">Vaccine Name</label>
-                                <input type="text" class="form-control" id="vaccine_name" name="vaccine_name" aria-describedby="phoneHelp">
+                                <input type="text" class="form-control" id="vaccine_name" name="vaccine_name" aria-describedby="phoneHelp" required>
                             </div>
                             <div class="mb-3">
                                 <label for="dose_vaccine" class="form-label">Number of Days for 2nd Dose</label>
-                                <input type="text" class="form-control" id="dose_vaccine" name="dose_vaccine" aria-describedby="phoneHelp">
+                                <input type="text" class="form-control" id="dose_vaccine" name="dose_vaccine" aria-describedby="phoneHelp" required>
                             </div>
                             <div class="container">
                                 <button type="submit" class="btn btn-warning" name="update_vaccine">Update Vaccine Details</button>
@@ -220,19 +220,19 @@
                         <form method="post">
                             <div class="mb-3">
                                 <label for="hospital_id" class="form-label">Hospital ID</label>
-                                <input type="text" class="form-control" id="hospital_id" name="hospital_id" aria-describedby="phoneHelp">
+                                <input type="text" class="form-control" id="hospital_id" name="hospital_id" aria-describedby="phoneHelp" required>
                             </div>
                             <div class="mb-3">
                                 <label for="hospital_name" class="form-label">Hospital Name</label>
-                                <input type="text" class="form-control" id="hospital_name" name="hospital_name" aria-describedby="phoneHelp">
+                                <input type="text" class="form-control" id="hospital_name" name="hospital_name" aria-describedby="phoneHelp" required>
                             </div>
                             <div class="mb-3">
                                 <label for="loc_hospital" class="form-label">Hospital Location</label>
-                                <input type="text" class="form-control" id="loc_hospital" name="loc_hospital" aria-describedby="phoneHelp">
+                                <input type="text" class="form-control" id="loc_hospital" name="loc_hospital" aria-describedby="phoneHelp" required>
                             </div>
                             <div class="mb-3">
                                 <label for="pin_hospital" class="form-label">Pin Code</label>
-                                <input type="text" class="form-control" id="pin_hospital" name="pin_hospital" aria-describedby="phoneHelp">
+                                <input type="text" class="form-control" id="pin_hospital" name="pin_hospital" aria-describedby="phoneHelp" required>
                             </div>
                             <div class="container">
                                 <button type="submit" class="btn btn-warning" name="update_hospital">Update Hospital Details</button>
