@@ -43,7 +43,7 @@ CREATE TRIGGER updateVaccineDoseSecond AFTER UPDATE ON USER_VACCINATION_SECOND F
 
 These commands will create the required triggers for your database.
 
-To connect with the database you must also change the username and the password for the `mysqli` connect to the database to function properly. 
+To connect with the database you must also change the username and the password for the `mysqli` connect to the database for the appliction to function properly. 
 
 Do the changes whererver required
 
