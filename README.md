@@ -6,6 +6,8 @@ Pre requistes to run this application
  - XAMPP
  - XAMPP Control panel with MySQL configured
 
+ To install XAMPP use this link <a href="https://www.apachefriends.org/download.html">given here</a>!
+
 Navigate to the `htdocs` folder inside your XAMPP directory
 
 Then run the following command to clone the repository
