@@ -8,8 +8,7 @@ Pre requistes to run this application
 
 <br>
  To install XAMPP use this link <a href="https://www.apachefriends.org/download.html">given here</a>!
-<br>
-<br>
+
 Navigate to the `htdocs` folder inside your XAMPP directory
 
 Then run the following command to clone the repository
