@@ -43,7 +43,7 @@ CREATE TRIGGER updateVaccineDoseSecond AFTER UPDATE ON USER_VACCINATION_SECOND F
 
 These commands will create the required triggers for your database.
 
-To connect with the database you must also change the username and the password for the `mysqli` connect to work. 
+To connect with the database you must also change the username and the password for the `mysqli` connect to the database to function properly. 
 
 Do the changes whererver required
 
@@ -55,7 +55,7 @@ Now visit to the below mentioned website link with your favorite web browser
 http://localhost:8080/COVAC/COVAC_DBMS/Pages/covac_welcome.php
 ```
 
-If this link doesn't work then try this link
+If the above link doesn't work then try this link
 
 ```
 http://localhost/COVAC/COVAC_DBMS/Pages/covac_welcome.php
