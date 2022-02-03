@@ -31,7 +31,7 @@ To implement the Database use the schema diagram shown below
 
 <img src="Pages/assets/schema_diagram.jpg">
 
-To implement tirggers run the following command in your MySQL database command line/terminal prompt
+To implement triggers run the following command in your MySQL database command line/terminal prompt
 
 ```
 CREATE TRIGGER updateVaccineDoseFirst AFTER UPDATE ON USER_VACCINATION_FIRST FOR EACH ROW UPDATE VACCINE_INVENTORY SET doses_available=doses_available-1, check_date = CURDATE() WHERE VACCINE_INVENTORY.hospital_id IN (SELECT hospital_id FROM USER_VACCINATION_FIRST WHERE VACCINE_INVENTORY.vaccine_id IN (SELECT vaccine_id FROM USER_VACCINATION_FIRST WHERE USER_VACCINATION_FIRST.vaccinator_id IS NOT NULL));
