@@ -47,7 +47,7 @@ CREATE TABLE VACCINE(vaccine_id int PRIMARY KEY,vaccine_name varchar(100),dev_co
 ```
  - To Create the `VACCINATOR_DETAIL` table:
 ```
-CREATE TABLE VACCINATOR_DETAIL(emp_id int PRIMARY KEY,first_name varchar(100),last_name varchar(100),phone_number int,password varchar(100),email varchar(100), hospital_id int,foreign key(hospital_id) REFERENCES HOSPITAL (hospital_id));
+CREATE TABLE VACCINATOR_DETAIL(emp_id int PRIMARY KEY,first_name varchar(100),last_name varchar(100),phone_number int,password varchar(100),email varchar(100), hospital_id int,FOREIGN KEY(hospital_id) REFERENCES HOSPITAL (hospital_id));
 ```
  - To Create the `VACCINE_INVENTORY` table:
  ```
