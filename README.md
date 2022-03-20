@@ -31,6 +31,10 @@ To implement the Database use the schema diagram shown below
 
 <img src="Pages/assets/schema_diagram.jpg">
 
+To implement the Database use the ER diagram shown below
+
+<img src="misc/dbms_covac_er.drawio.png">
+
 You can also copy and paste the given commands after you create the Database and you are in the Maria DB Command Prompt
 
  - To Create the `USER` table:
