@@ -31,7 +31,42 @@ To implement the Database use the schema diagram shown below
 
 <img src="Pages/assets/schema_diagram.jpg">
 
-To implement triggers run the following command in your MySQL database command line/terminal prompt
+You can also copy and paste the given commands after you create the Database and you are in the Maria DB Command Prompt
+
+ - To Create the `USER` table:
+```
+ CREATE TABLE USER(user_id int PRIMARY KEY,first_name varchar(100),last_name varchar(100),phone int,email varchar(100),password varchar(100),aadhar_number int,dob date);
+```
+ - To Create the `HOSPITAL` table:
+```
+CREATE TABLE HOSPITAL(hospital_id  int PRIMARY KEY,hospital_name varchar(100),hospital_loc varchar(100),hospital_pin int);
+```
+ - To Create the `VACCINE` table:
+```
+CREATE TABLE VACCINE(vaccine_id int PRIMARY KEY,vaccine_name varchar(100),dev_company varchar(100),time_for_sec_dose int);
+```
+ - To Create the `VACCINATOR_DETAIL` table:
+```
+CREATE TABLE VACCINATOR_DETAIL(emp_id int PRIMARY KEY,first_name varchar(100),last_name varchar(100),phone_number int,password varchar(100),email varchar(100), hospital_id int,foreign key(hospital_id) REFERENCES HOSPITAL (hospital_id));
+```
+ - To Create the `VACCINE_INVENTORY` table:
+ ```
+CREATE TABLE VACCINE_INVENTORY(vaccine_id int,hospital_id int,check_date date,doses_available int,PRIMARY KEY(vaccine_id,hospital_id),FOREIGN KEY(vaccine_id) REFERENCES VACCINE (vaccine_id),FOREIGN KEY (hospital_id) REFERENCES HOSPITAL (hospital_id));
+ ```
+ - To Create the `USER_VACCINATION_FIRST` table:
+```
+CREATE TABLE USER_VACCINATION_FIRST(user_id int PRIMARY KEY,dose_date date,vaccinator_id int,hospital_id int,FOREIGN KEY(user_id) REFERENCES USER(user_id),FOREIGN KEY(vaccinator_id) REFERENCES VACCINATOR_DETAIL(vaccinator_id),FOREIGN KEY(hospital_id) REFERENCES HOSPITAL (hospital_id));
+```
+ - To Create the `USER_VACCINATION_SECOND` table:
+```
+CREATE TABLE USER_VACCINATION_SECOND(user_id int PRIMARY KEY,dose_date date,vaccinator_id int,hospital_id int,FOREIGN KEY(user_id) REFERENCES USER(user_id),FOREIGN KEY(vaccinator_id) REFERENCES VACCINATOR_DETAILS(vaccinator_id),FOREIGN KEY(hospital_id) REFERENCES HOSPITAL (hospital_id));
+```
+ - To Create the `ADMIN` table:
+```
+CREATE TABLE ADMIN(admin_id int PRIMARY KEY,admin_name varchar(100),admin_password varchar(100));
+```
+
+ - To implement `triggers` run the following command in your MySQL database command line/terminal prompt
 
 ```
 CREATE TRIGGER updateVaccineDoseFirst AFTER UPDATE ON USER_VACCINATION_FIRST FOR EACH ROW UPDATE VACCINE_INVENTORY SET doses_available=doses_available-1, check_date = CURDATE() WHERE VACCINE_INVENTORY.hospital_id IN (SELECT hospital_id FROM USER_VACCINATION_FIRST WHERE VACCINE_INVENTORY.vaccine_id IN (SELECT vaccine_id FROM USER_VACCINATION_FIRST WHERE USER_VACCINATION_FIRST.vaccinator_id IS NOT NULL));
